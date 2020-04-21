@@ -64,5 +64,7 @@ def test_bake_and_run_tests(cookies):
         assert test.returncode == 1
         out = test.stdout.decode()
         print(out)
-        assert "1 failed" in out
-        assert "Python3 template including recommended code styling" in out
+        assert "3 failed" in out
+        assert "Please change ./README.rst" in out
+        assert "Please change the documentation in docs/index.rst" in out
+        assert "Please change the documentation in docs/reference/api.rst" in out

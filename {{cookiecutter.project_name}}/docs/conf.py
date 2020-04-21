@@ -21,7 +21,7 @@ import {{ cookiecutter.project_name }}  # noqa
 
 # General information about the project.
 project = "{{ cookiecutter.project_name }}"
-copyright = "2020, Diamond Light Source"
+copyright = "{% now 'local', '%Y' %}, Diamond Light Source"
 author = "{{ cookiecutter.full_name }}"
 
 # The short X.Y version.

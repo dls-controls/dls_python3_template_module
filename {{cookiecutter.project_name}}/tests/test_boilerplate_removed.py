@@ -23,13 +23,6 @@ def setupcfg():
 
 
 @pytest.fixture
-def doc_confpy():
-    from docs import conf
-
-    return conf.project, conf.copyright, conf.author
-
-
-@pytest.fixture
 def doc_index():
     indexrst = os.path.abspath("docs/index.rst")
     with open(indexrst, "r") as f:
@@ -47,76 +40,34 @@ def doc_api():
 
 # README
 def test_changed_README(readme):
-    if "dls_python3_template_module" in readme:
-        assert False, (
-            "Please change the README to include information " "about your module."
+    if "This is a template module for Python3 projects" in readme:
+        raise AssertionError(
+            "Please change ./README.rst "
+            "to include a paragraph on what your module does"
         )
 
 
 # setup.cfg
-def test_module_name(setupcfg):
-    assert (
-        setupcfg["name"] != "dls_python3_template_module"
-    ), "Did you remember to change the module name in setup.cfg?"
-
-
 def test_module_description(setupcfg):
-    assert (
-        setupcfg["description"]
-        != "Python3 template including recommended code styling and versioning"
-    ), "Please write a description for your module."
-
-
-def test_module_url(setupcfg):
-    assert (
-        setupcfg["url"] != "https://github.com/dls-controls/dls_python3_template_module"
-    ), "Please add a URL for your module repo."
-
-
-def test_module_author_set(setupcfg):
-    if setupcfg["author"]:
-        assert setupcfg["author"] != "Author", "Please add an author."
-    else:
-        "Please add an author field to setup.cfg"
-
-
-def test_module_author_email_set(setupcfg):
-    if setupcfg["author_email"]:
-        assert (
-            setupcfg["author_email"] != "author@diamond.ac.uk"
-        ), "Please set the author email address."
-    else:
-        "Please add author_email field to setup.cfg"
+    if "Python3 template module" in setupcfg["description"]:
+        raise AssertionError(
+            "Please change description in ./setup.cfg "
+            "to be a one line description of your module"
+        )
 
 
 # Docs
 def test_docs_index_changed(doc_index):
-    assert (
-        "dls_python3_template_module" not in doc_index
-    ), "Change the documentation in docs/index.rst"
+    if "Write some introductory paragraphs here" in doc_index:
+        raise AssertionError(
+            "Please change the documentation in docs/index.rst "
+            "to describe how to use your module"
+        )
 
 
 def test_docs_ref_api_changed(doc_api):
-    assert (
-        "dls_python3_template_module" not in doc_api
-    ), "Change the module name in docs/reference/api.rst"
-
-
-def test_docs_conf_project_changed(doc_confpy):
-    if "dls_python3_template_module" in doc_confpy:
-        assert False, "Please change the project name in docs/conf.py"
-
-
-def test_docs_conf_correct_year(doc_confpy):
-    import datetime
-
-    thisyear = datetime.datetime.now().year
-    if str(thisyear) not in str(doc_confpy):
-        assert False, "Please state the correct year in docs/conf.py"
-
-
-def test_docs_conf_author_changed(doc_confpy):
-    if "author" in doc_confpy:
-        assert False, "Please change the author in docs/conf.py"
-    else:
-        print("Please add an author variable to docs/conf.py")
+    if "You can mix verbose text with docstring and signature" in doc_api:
+        raise AssertionError(
+            "Please change the documentation in docs/reference/api.rst "
+            "to introduce the API for your module"
+        )
