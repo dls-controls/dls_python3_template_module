@@ -63,4 +63,6 @@ def test_bake_and_run_tests(cookies):
         test = run_inside_dir('pipenv run tests', str(result.project))
         assert test.returncode == 2
         # TODO: we need to be more specific about this error once templating is done
-        assert "Something about boilerplate" in test.stderr.decode()
+        out = test.stdout.decode()
+        print(out)
+        assert "Something about boilerplate" in out
