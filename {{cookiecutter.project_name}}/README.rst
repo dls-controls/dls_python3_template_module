@@ -1,4 +1,4 @@
-dls_python3_template_module
+{{ cookiecutter.project_name }}
 ===========================
 
 |build_status| |coverage| |pypi_version| |readthedocs|
@@ -53,19 +53,19 @@ for your repository.
 Documentation
 -------------
 
-Full documentation is available at http://dls_python3_template_module.readthedocs.io
+Full documentation is available at http://{{ cookiecutter.project_name }}.readthedocs.io
 
 Source Code
 -----------
 
-Available from http://github.com/dls-controls/dls_python3_template_module
+Available from http://github.com/dls-controls/{{ cookiecutter.project_name }}
 
 Installation
 ------------
 
 To start using this template::
 
-    git clone https://github.com/dls-controls/dls_python3_template_module
+    git clone https://github.com/dls-controls/{{ cookiecutter.project_name }}
 
 Contributing
 ------------
@@ -77,24 +77,24 @@ License
 APACHE License. (see `LICENSE`_)
 
 
-.. |build_status| image:: https://travis-ci.com/dls-controls/dls_python3_template_module.svg?branch=master
-    :target: https://travis-ci.com/dls-controls/dls_python3_template_module
+.. |build_status| image:: https://travis-ci.com/dls-controls/{{ cookiecutter.project_name }}.svg?branch=master
+    :target: https://travis-ci.com/dls-controls/{{ cookiecutter.project_name }}
     :alt: Build Status
 
-.. |coverage| image:: https://coveralls.io/repos/github/dls-controls/dls_python3_template_module/badge.svg?branch=master
-    :target: https://coveralls.io/github/dls-controls/dls_python3_template_module?branch=master
+.. |coverage| image:: https://coveralls.io/repos/github/dls-controls/{{ cookiecutter.project_name }}/badge.svg?branch=master
+    :target: https://coveralls.io/github/dls-controls/{{ cookiecutter.project_name }}?branch=master
     :alt: Test Coverage
 
-.. |pypi_version| image:: https://badge.fury.io/py/dls_python3_template_module.svg
-    :target: https://badge.fury.io/py/dls_python3_template_module
+.. |pypi_version| image:: https://badge.fury.io/py/{{ cookiecutter.project_name }}.svg
+    :target: https://badge.fury.io/py/{{ cookiecutter.project_name }}
     :alt: Latest PyPI version
 
-.. |readthedocs| image:: https://readthedocs.org/projects/dls_python3_template_module/badge/?version=latest
-    :target: http://dls_python3_template_module.readthedocs.io
+.. |readthedocs| image:: https://readthedocs.org/projects/{{ cookiecutter.project_name }}/badge/?version=latest
+    :target: http://{{ cookiecutter.project_name }}.readthedocs.io
     :alt: Documentation
 
 .. _CONTRIBUTING:
-    https://github.com/dls-controls/dls_python3_template_module/blob/master/CONTRIBUTING.rst
+    https://github.com/dls-controls/{{ cookiecutter.project_name }}/blob/master/CONTRIBUTING.rst
 
 .. _LICENSE:
-    https://github.com/dls-controls/dls_python3_template_module/blob/master/LICENSE
+    https://github.com/dls-controls/{{ cookiecutter.project_name }}/blob/master/LICENSE
