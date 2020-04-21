@@ -1,4 +1,4 @@
-from dls_python3_template_module import HelloClass, cli, say_hello_lots
+from {{ cookiecutter.project_name }} import HelloClass, cli, say_hello_lots
 
 
 def test_hello_class_formats_greeting():
