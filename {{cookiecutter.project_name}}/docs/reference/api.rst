@@ -1,13 +1,13 @@
 .. _API:
 
-dls_python3_template_module API
+{{ cookiecutter.project_name }} API
 ===============================
 
-This is the internal API reference for dls_python3_template_module
+This is the internal API reference for {{ cookiecutter.project_name }}
 
 You can mix verbose text with docstring and signature extraction by
 using ``autoclass`` and ``autofunction`` directives instead of
 ``automodule`` below.
 
-.. automodule:: dls_python3_template_module
+.. automodule:: {{ cookiecutter.project_name }}
     :members:

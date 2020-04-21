@@ -1,6 +1,6 @@
 from argparse import ArgumentParser
 
-from dls_python3_template_module import HelloClass, say_hello_lots
+from {{ cookiecutter.project_name }} import HelloClass, say_hello_lots
 
 
 def main(args=None):
@@ -13,5 +13,5 @@ def main(args=None):
 
 if __name__ == "__main__":
     # test with:
-    #     pipenv run python -m dls_python3_template_module.cli
+    #     pipenv run python -m {{ cookiecutter.project_name }}.cli
     main()

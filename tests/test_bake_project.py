@@ -58,5 +58,5 @@ def test_bake_and_run_tests(cookies):
     with bake_in_temp_dir(cookies, extra_context=my_extra_context) as result:
         assert result.project.isdir()
         assert run_inside_dir('pipenv run tests', str(result.project)) == 0, \
-            "Generated module tests failed, did you remember to remove all of the boilerplate?"
+            "Module tests failed, did you remember to remove all of the boilerplate?"
         print("test_bake_and_run_tests path", str(result.project))

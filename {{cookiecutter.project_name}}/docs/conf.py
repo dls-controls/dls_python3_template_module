@@ -15,19 +15,19 @@ import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(__file__, "..", "..")))
 
-import dls_python3_template_module  # noqa
+import {{ cookiecutter.project_name }}  # noqa
 
 # -- General configuration ------------------------------------------------
 
 # General information about the project.
-project = "dls_python3_template_module"
+project = "{{ cookiecutter.project_name }}"
 copyright = "2020, Diamond Light Source"
-author = "author"
+author = "{{ cookiecutter.full_name }}"
 
 # The short X.Y version.
-version = dls_python3_template_module.__version__.split("+")[0]
+version = {{ cookiecutter.project_name }}.__version__.split("+")[0]
 # The full version, including alpha/beta/rc tags.
-release = dls_python3_template_module.__version__
+release = {{ cookiecutter.project_name }}.__version__
 
 if os.environ.get("READTHEDOCS") == "True":
     # Readthedocs modifies conf.py, so will appear dirty when it isn't

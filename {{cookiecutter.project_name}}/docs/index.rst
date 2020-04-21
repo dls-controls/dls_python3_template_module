@@ -1,4 +1,4 @@
-dls_python3_template_module
+{{ cookiecutter.project_name }}
 ===========================
 
 Write some introductory paragraphs here. They should describe:
@@ -15,7 +15,7 @@ Installation
 This section describes how to install the module so you can try it out.
 For Python modules this often looks like this::
 
-    pip install dls_python3_template_module
+    pip install {{ cookiecutter.project_name }}
 
 Usage
 -----
@@ -26,7 +26,7 @@ introductory code here:
 
 .. code:: python
 
-    from dls_python3_template_module import HelloClass
+    from {{ cookiecutter.project_name }} import HelloClass
 
     hello = HelloClass("me")
     print(hello.format_greeting())

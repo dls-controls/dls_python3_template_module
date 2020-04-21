@@ -1,10 +1,11 @@
-dls_python3_template_module
+{{ cookiecutter.project_name }}
 ===========================
 
-Description.
+{{ cookiecutter.project_short_description }}
 
 How to use
 ----------
+
 
 
 Credits
