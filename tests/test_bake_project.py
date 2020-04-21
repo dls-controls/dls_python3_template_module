@@ -39,18 +39,6 @@ def bake_in_temp_dir(cookies, *args, **kwargs):
         rmtree(str(result.project))
 
 
-def test_bake_project(cookies):
-    result = cookies.bake(extra_context={'full_name': 'fakename',
-                                          'email': 'email@email.com',
-                                          'project_name': 'myproj',
-                                          'project_short_description': 'It does this.',
-                                          'use_github': 'y'})
-    assert result.exit_code == 0
-    assert result.exception is None
-    assert result.project.basename == 'myproj'
-    assert result.project.isdir()
-
-
 def run_inside_dir(command, dirpath):
     """
     Run a command from inside a given directory, returning the exit status
@@ -62,7 +50,13 @@ def run_inside_dir(command, dirpath):
 
 
 def test_bake_and_run_tests(cookies):
-    with bake_in_temp_dir(cookies) as result:
+    my_extra_context={'full_name': 'fakename',
+                    'email': 'email@email.com',
+                    'project_name': 'myproj',
+                    'project_short_description': 'It does this.',
+                    'use_github': 'y'}
+    with bake_in_temp_dir(cookies, extra_context=my_extra_context) as result:
         assert result.project.isdir()
-        run_inside_dir('pipenv run tests', str(result.project)) == 0
+        assert run_inside_dir('pipenv run tests', str(result.project)) == 0, \
+            "Generated module tests failed, did you remember to remove all of the boilerplate?"
         print("test_bake_and_run_tests path", str(result.project))
