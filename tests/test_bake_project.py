@@ -9,6 +9,7 @@ from cookiecutter.utils import rmtree
 from click.testing import CliRunner
 
 import importlib
+import pytest
 
 
 @contextmanager
@@ -46,7 +47,7 @@ def run_inside_dir(command, dirpath):
     :param dirpath: String, path of the directory the command is being run.
     """
     with inside_dir(dirpath):
-        return subprocess.check_call(shlex.split(command))
+        return subprocess.run(shlex.split(command), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 
 def test_bake_and_run_tests(cookies):
@@ -57,6 +58,9 @@ def test_bake_and_run_tests(cookies):
                     'use_github': 'y'}
     with bake_in_temp_dir(cookies, extra_context=my_extra_context) as result:
         assert result.project.isdir()
-        assert run_inside_dir('pipenv run tests', str(result.project)) == 0, \
-            "Generated module tests failed, did you remember to remove all of the boilerplate?"
-        print("test_bake_and_run_tests path", str(result.project))
+        install = run_inside_dir('pipenv install --dev', str(result.project))
+        assert install.returncode == 0
+        test = run_inside_dir('pipenv run tests', str(result.project))
+        assert test.returncode == 2
+        # TODO: we need to be more specific about this error once templating is done
+        assert "Something about boilerplate" in test.stderr.decode()
