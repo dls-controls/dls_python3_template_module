@@ -3,8 +3,8 @@
 
 |build_status| |coverage| |pypi_version| |readthedocs|
 
-This is a template module for Python3 projects, containing recommended features
-for code styling checks and versioning.
+This is where you should write a short paragraph that describes what your module does,
+how it does it, and why people should use it.
 
 Documentation
 -------------

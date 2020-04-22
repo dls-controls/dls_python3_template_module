@@ -40,7 +40,7 @@ def doc_api():
 
 # README
 def test_changed_README(readme):
-    if "This is a template module for Python3 projects" in readme:
+    if "This is where you should write a short paragraph" in readme:
         raise AssertionError(
             "Please change ./README.rst "
             "to include a paragraph on what your module does"
