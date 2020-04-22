@@ -2,6 +2,5 @@
   "full_name": "{{ cookiecutter.full_name }}",
   "email": "{{ cookiecutter.email }}",
   "project_name": "{{ cookiecutter.module_name }}",
-  "project_short_description": "Python3 template module containing recommendations for code style checks and versioning",
   "use_github": "y"
 }

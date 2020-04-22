@@ -49,7 +49,7 @@ def test_changed_README(readme):
 
 # setup.cfg
 def test_module_description(setupcfg):
-    if "Python3 template module" in setupcfg["description"]:
+    if "One line description of your module" in setupcfg["description"]:
         raise AssertionError(
             "Please change description in ./setup.cfg "
             "to be a one line description of your module"
