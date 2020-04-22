@@ -1,4 +1,4 @@
-from ._types import HelloClass
+from {{ cookiecutter.project_name }}._types import HelloClass
 
 
 def say_hello_lots(hello: HelloClass = None, times=5):
