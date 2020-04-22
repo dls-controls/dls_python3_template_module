@@ -1,141 +1,87 @@
-======================
-Cookiecutter PyPackage
-======================
+dls_python3_template_module
+===========================
 
-.. image:: https://pyup.io/repos/github/audreyr/cookiecutter-pypackage/shield.svg
-     :target: https://pyup.io/repos/github/audreyr/cookiecutter-pypackage/
-     :alt: Updates
 
-.. image:: https://travis-ci.org/audreyr/cookiecutter-pypackage.svg?branch=master
-    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage
 
-Cookiecutter_ template for a Python package.
+Getting started
+---------------
 
-* GitHub repo: https://github.com/audreyr/cookiecutter-pypackage/
-* Documentation: https://cookiecutter-pypackage.readthedocs.io/
-* Free software: BSD license
+This template can be used either via Cookiecutter_::
 
-Features
---------
+    cookiecutter https://gitlab.diamond.ac.uk/controls/templates/dls_python3_template_module
 
-* Testing setup with ``unittest`` and ``python setup.py test`` or ``pytest``
-* Travis-CI_: Ready for Travis Continuous Integration testing
-* Tox_ testing: Setup to easily test for Python 3.5, 3.6, 3.7, 3.8
-* Sphinx_ docs: Documentation ready for generation with, for example, `Read the Docs`_
-* bump2version_: Pre-configured version bumping with a single command
-* Auto-release to PyPI_ when you push a new tag to master (optional)
-* Command line interface using Click (optional)
+or via dls-start-new-module.py::
+
+    dls-start-new-module.py -a python3 <module_name>
+
+When you have your module you can create the pipenv::
+
+    cd <module_name>
+    pipenv install --dev
+
+Now you are ready to start writing code
+
+What to edit
+------------
+
+Your code lives in ``<module_name>``, and the tests in ``tests/test_<module_name>.py``
+
+There is a ``main()`` function in ``<module_name>/cli.py`` that is exposed as a console
+script. You can remove this fron ``setup.cfg`` if your module doesn't have a commandline interface.
+
+Running the tests will tell you which bits of boilerplate need replacing::
+
+    pipenv run tests
+
+The test output will tell you what documentation needs updating::
+
+    ___________________________________________________________________________________ test_changed_README ___________________________________________________________________________________
+    Traceback (most recent call last):
+    File "/path/to/my_module/tests/test_boilerplate_removed.py", line 45, in test_changed_README
+        "Please change ./README.rst "
+    AssertionError: Please change ./README.rst to include a paragraph on what your module does
+    _________________________________________________________________________________ test_module_description _________________________________________________________________________________
+    Traceback (most recent call last):
+    File "/path/to/my_module/tests/test_boilerplate_removed.py", line 54, in test_module_description
+        "Please change description in ./setup.cfg "
+    AssertionError: Please change description in ./setup.cfg to be a one line description of your module
+    _________________________________________________________________________________ test_docs_index_changed _________________________________________________________________________________
+    Traceback (most recent call last):
+    File "/path/to/my_module/tests/test_boilerplate_removed.py", line 63, in test_docs_index_changed
+        "Please change the documentation in docs/index.rst "
+    AssertionError: Please change the documentation in docs/index.rst to describe how to use your module
+    ________________________________________________________________________________ test_docs_ref_api_changed ________________________________________________________________________________
+    Traceback (most recent call last):
+    File "/path/to/my_module/tests/test_boilerplate_removed.py", line 71, in test_docs_ref_api_changed
+        "Please change the documentation in docs/reference/api.rst "
+    AssertionError: Please change the documentation in docs/reference/api.rst to introduce the API for your module
+
+When you have done this you can safely delete tests/test_boilerplate_removed.py
+
+What's included
+---------------
+
+Some tools have been included and configured to make this module work out of the box. They are briefly described below.
+
+pipenv_
+~~~~~~~
+
+This manages the dependencies to make a reproducable environment for the module to run in. The Pipfile is used to:
+
+- Declare loosely defined module dependencies
+- Declare loosely defined development time dependencies
+- Declare custom commands as "scripts"
+
+When a dependency is installed its actual pinned version is stored in the Pipfile.lock.
+
+The scripts declared by this module are:
+
+- ``pipenv run tests``: Run all the unit tests, linting, and static type analysis, with coverage
+- ``pipenv run docs``: Build the docs using sphinx_
+
+See https://confluence.diamond.ac.uk/display/CNTRLS/Python+3 for more details on the usage of pipenv.
+
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-
-Build Status
--------------
-
-Linux:
-
-.. image:: https://img.shields.io/travis/audreyr/cookiecutter-pypackage.svg
-    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage
-    :alt: Linux build status on Travis CI
-
-Windows:
-
-.. image:: https://ci.appveyor.com/api/projects/status/github/audreyr/cookiecutter-pypackage?branch=master&svg=true
-    :target: https://ci.appveyor.com/project/audreyr/cookiecutter-pypackage/branch/master
-    :alt: Windows build status on Appveyor
-
-Quickstart
-----------
-
-Install the latest Cookiecutter if you haven't installed it yet (this requires
-Cookiecutter 1.4.0 or higher)::
-
-    pip install -U cookiecutter
-
-Generate a Python package project::
-
-    cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git
-
-Then:
-
-* Create a repo and put it there.
-* Add the repo to your Travis-CI_ account.
-* Install the dev requirements into a virtualenv. (``pip install -r requirements_dev.txt``)
-* Register_ your project with PyPI.
-* Run the Travis CLI command `travis encrypt --add deploy.password` to encrypt your PyPI password in Travis config
-  and activate automated deployment on PyPI when you push a new tag to master branch.
-* Add the repo to your `Read the Docs`_ account + turn on the Read the Docs service hook.
-* Release your package by pushing a new tag to master.
-* Add a `requirements.txt` file that specifies the packages you will need for
-  your project and their versions. For more info see the `pip docs for requirements files`_.
-* Activate your project on `pyup.io`_.
-
-.. _`pip docs for requirements files`: https://pip.pypa.io/en/stable/user_guide/#requirements-files
-.. _Register: https://packaging.python.org/tutorials/packaging-projects/#uploading-the-distribution-archives
-
-For more details, see the `cookiecutter-pypackage tutorial`_.
-
-.. _`cookiecutter-pypackage tutorial`: https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html
-
-Not Exactly What You Want?
---------------------------
-
-Don't worry, you have options:
-
-Similar Cookiecutter Templates
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* `Nekroze/cookiecutter-pypackage`_: A fork of this with a PyTest test runner,
-  strict flake8 checking with Travis/Tox, and some docs and `setup.py` differences.
-
-* `tony/cookiecutter-pypackage-pythonic`_: Fork with py2.7+3.3 optimizations.
-  Flask/Werkzeug-style test runner, ``_compat`` module and module/doc conventions.
-  See ``README.rst`` or the `github comparison view`_ for exhaustive list of
-  additions and modifications.
-
-* `ardydedase/cookiecutter-pypackage`_: A fork with separate requirements files rather than a requirements list in the ``setup.py`` file.
-
-* `lgiordani/cookiecutter-pypackage`_: A fork of Cookiecutter that uses Punch_ instead of bump2version_ and with separate requirements files.
-
-* `briggySmalls/cookiecutter-pypackage`_: A fork using Pipenv_ for package management, with linting, formatting and more.
-
-* Also see the `network`_ and `family tree`_ for this repo. (If you find
-  anything that should be listed here, please add it and send a pull request!)
-
-Fork This / Create Your Own
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you have differences in your preferred setup, I encourage you to fork this
-to create your own version. Or create your own; it doesn't strictly have to
-be a fork.
-
-* Once you have your own version working, add it to the Similar Cookiecutter
-  Templates list above with a brief description.
-
-* It's up to you whether or not to rename your fork/own version. Do whatever
-  you think sounds good.
-
-Or Submit a Pull Request
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-I also accept pull requests on this, if they're small, atomic, and if they
-make my own packaging experience better.
-
-
-.. _Travis-CI: http://travis-ci.org/
-.. _Tox: http://testrun.org/tox/
-.. _Sphinx: http://sphinx-doc.org/
-.. _Read the Docs: https://readthedocs.io/
-.. _`pyup.io`: https://pyup.io/
-.. _bump2version: https://github.com/c4urself/bump2version
-.. _Punch: https://github.com/lgiordani/punch
-.. _Pipenv: https://pipenv.readthedocs.io/en/latest/
-.. _PyPi: https://pypi.python.org/pypi
-
-.. _`Nekroze/cookiecutter-pypackage`: https://github.com/Nekroze/cookiecutter-pypackage
-.. _`tony/cookiecutter-pypackage-pythonic`: https://github.com/tony/cookiecutter-pypackage-pythonic
-.. _`ardydedase/cookiecutter-pypackage`: https://github.com/ardydedase/cookiecutter-pypackage
-.. _`lgiordani/cookiecutter-pypackage`: https://github.com/lgiordani/cookiecutter-pypackage
-.. _`briggySmalls/cookiecutter-pypackage`: https://github.com/briggySmalls/cookiecutter-pypackage
-.. _github comparison view: https://github.com/tony/cookiecutter-pypackage-pythonic/compare/audreyr:master...master
-.. _`network`: https://github.com/audreyr/cookiecutter-pypackage/network
-.. _`family tree`: https://github.com/audreyr/cookiecutter-pypackage/network/members
+.. _pipenv: https://pipenv.pypa.io/en/latest/
+.. _sphinx: https://www.sphinx-doc.org/en/master/
