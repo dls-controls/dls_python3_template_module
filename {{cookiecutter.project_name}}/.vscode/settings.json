@@ -8,6 +8,5 @@
     "python.testing.pytestEnabled": true,
     "python.formatting.provider": "black",
     "python.jediEnabled": false,
-    "vsintellicode.python.completionsEnabled": true,
     "restructuredtext.confPath": "${workspaceFolder}/docs"
 }
