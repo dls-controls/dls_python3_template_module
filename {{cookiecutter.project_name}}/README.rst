@@ -19,7 +19,7 @@ Available from http://github.com/dls-controls/{{ cookiecutter.project_name }}
 Installation
 ------------
 
-To start using this template::
+To start using this project::
 
     git clone https://github.com/dls-controls/{{ cookiecutter.project_name }}
 
