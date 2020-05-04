@@ -10,4 +10,3 @@ def main(args=None):
     parser.add_argument("--times", type=int, default=5, help="Number of times to greet")
     args = parser.parse_args(args)
     say_hello_lots(HelloClass(args.name), args.times)
-
