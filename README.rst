@@ -104,46 +104,46 @@ The tools providing source code checking below are all added as plugins so that
 when pytest is run, any source code failing the checks will be reported in the
 results. Key features:
 
-- Bare asserts​ for readable tests
-- Test functions rather than classes​ reducing boilerplate
-- Fixtures for supporting setUp and tearDown​
+- Bare asserts for readable tests
+- Test functions rather than classes reducing boilerplate
+- Fixtures for supporting setUp and tearDown
 - Parameterized tests
 
 flake8_
 ~~~~~~~
 
-This tool warns about linting type errors​, improving the overall quality of
+This tool warns about linting type errors, improving the overall quality of
 your code. For example it will warn about:
 
-- Unused imports​
-- Unused variables​
+- Unused imports
+- Unused variables
 - Undefined names
 
 black_
 ~~~~~~
 
-This opinionated tool reformats code​ to a style guide. This reduces arguments
+This opinionated tool reformats code to a style guide. This reduces arguments
 between developers as to how code should look, and aids code reviews as code
 written by any developer will have the same style.
 
 isort_
 ~~~~~~
 
-This tool sorts imports into sections​. Like black_ it is also opinionated,
+This tool sorts imports into sections. Like black_ it is also opinionated,
 and has the same function of reducing arguments between developers. This
 module includes some options that make it compatible with black.
 
 mypy_
 ~~~~~
 
-This tool is a type checker​ that statically analyses your code, warning about the wrong usage of types. It will only check code that is annotated with type hints, so can be
+This tool is a type checker that statically analyses your code, warning about the wrong usage of types. It will only check code that is annotated with type hints, so can be
 used in only some parts of the code. It is highly recommended for large projects as it helps developers answer the question "what exactly was I passed into this function" without
 having to sacrifice Python's flexibility where needed.
 
 versiongit_
 ~~~~~~~~~~~
 
-This tool gets the version number of a module from a ``git describe​`` command. At release time it takes this version number and puts it in the released egg, wheel or sdist.
+This tool gets the version number of a module from a ``git describe`` command. At release time it takes this version number and puts it in the released egg, wheel or sdist.
 It takes the form of a single source file that is stored in the repo, which can be used at runtime or build time. It is inspired by versioneer_ but is much smaller in size and
 complexity
 
@@ -151,10 +151,10 @@ complexity
 .. _pipenv: https://pipenv.pypa.io/en/latest/
 .. _sphinx: https://www.sphinx-doc.org/en/master/
 .. _ReadTheDocs: https://readthedocs.org/
-.. _pytest: https://docs.pytest.org/en/latest/​
-.. _flake8: https://flake8.pycqa.org/en/latest/​
-.. _black: https://black.readthedocs.io/en/stable/​
-.. _isort: https://isort.readthedocs.io/en/latest/​
-.. _mypy: http://mypy-lang.org/​
-.. _versiongit: https://versiongit.readthedocs.io/en/latest/​
+.. _pytest: https://docs.pytest.org/en/latest/
+.. _flake8: https://flake8.pycqa.org/en/latest/
+.. _black: https://black.readthedocs.io/en/stable/
+.. _isort: https://isort.readthedocs.io/en/latest/
+.. _mypy: http://mypy-lang.org/
+.. _versiongit: https://versiongit.readthedocs.io/en/latest/
 .. _versioneer: https://github.com/warner/python-versioneer
