@@ -1,36 +1,31 @@
 {{ cookiecutter.project_name }}
 ===========================
 
-|build_status| |coverage| |pypi_version| |readthedocs|
+|build_status| |coverage| |pypi_version| |readthedocs| |license|
 
 This is where you should write a short paragraph that describes what your module does,
 how it does it, and why people should use it.
 
-Documentation
--------------
+============== ==============================================================
+PyPI           ``pip install {{ cookiecutter.project_name }}``
+Source code    https://github.com/dls-controls/{{ cookiecutter.project_name }}
+Documentation  http://{{ cookiecutter.project_name }}.readthedocs.io
+============== ==============================================================
 
-Full documentation is available at http://{{ cookiecutter.project_name }}.readthedocs.io
+This is where you should put some images or code snippets that illustrate
+some relevant examples. If it is a library then you might put some
+introductory code here:
 
-Source Code
------------
+.. code:: python
 
-Available from http://github.com/dls-controls/{{ cookiecutter.project_name }}
+    from {{ cookiecutter.project_name }} import HelloClass
 
-Installation
-------------
+    hello = HelloClass("me")
+    print(hello.format_greeting())
 
-To start using this project::
+Or if it is a commandline tool then you might put some example commands here::
 
-    git clone https://github.com/dls-controls/{{ cookiecutter.project_name }}
-
-Contributing
-------------
-
-See `CONTRIBUTING`_
-
-License
--------
-APACHE License. (see `LICENSE`_)
+    {{ cookiecutter.project_name }} person --times=2
 
 
 .. |build_status| image:: https://travis-ci.com/dls-controls/{{ cookiecutter.project_name }}.svg?branch=master
@@ -49,8 +44,6 @@ APACHE License. (see `LICENSE`_)
     :target: http://{{ cookiecutter.project_name }}.readthedocs.io
     :alt: Documentation
 
-.. _CONTRIBUTING:
-    https://github.com/dls-controls/{{ cookiecutter.project_name }}/blob/master/CONTRIBUTING.rst
-
-.. _LICENSE:
-    https://github.com/dls-controls/{{ cookiecutter.project_name }}/blob/master/LICENSE
+.. |license| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
+    :target: https://opensource.org/licenses/Apache-2.0
+    :alt: Apache License

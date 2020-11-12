@@ -1,7 +1,7 @@
 .. _API:
 
-{{ cookiecutter.project_name }} API
-===============================
+API
+===
 
 This is the internal API reference for {{ cookiecutter.project_name }}
 

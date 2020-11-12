@@ -1,48 +1,72 @@
-{{ cookiecutter.project_name }}
-===========================
+.. include:: ../README.rst
 
-Write some introductory paragraphs here. They should describe:
+How the documentation is structured
+-----------------------------------
 
-- What the module does
-- How it does it
-- Why you should use it
+.. rst-class:: columns
 
-If you have a diagram or screenshot, you can include it here.
+:ref:`tutorials`
+~~~~~~~~~~~~~~~~
 
-Installation
-------------
+Tutorials for installation, library and commandline usage. New users start here.
 
-This section describes how to install the module so you can try it out.
-For Python modules this often looks like this::
+.. rst-class:: columns
 
-    pip install {{ cookiecutter.project_name }}
+:ref:`how-to`
+~~~~~~~~~~~~~
 
-Usage
------
+Practical step-by-step guides for the more experienced user.
 
-Once you have installed the module your readers would like to know how
-to get started with it. If it is a library then you might put some
-introductory code here:
+.. rst-class:: columns
 
-.. code:: python
+:ref:`explanations`
+~~~~~~~~~~~~~~~~~~~
 
-    from {{ cookiecutter.project_name }} import HelloClass
+Explanation of how the library works and why it works that way.
 
-    hello = HelloClass("me")
-    print(hello.format_greeting())
+.. rst-class:: columns
 
-Or if it is a commandline tool then you might put some example commands here::
+:ref:`reference`
+~~~~~~~~~~~~~~~~
 
-    dls-python3-template-module person --times=2
+Technical reference material, for classes, methods, APIs, commands, and contributing to the project.
 
-The rest of the docs
---------------------
+.. rst-class:: endcolumns
 
-Everything else depends very much on your target module. The `API` section
-should contain the reference material that a user of your module needs to use
-your module. Consider adding tutorials to walk users through using your module,
-how-to guides and FAQs to address particular problems, and explanations to say
-why things should be done a particular way. More details in this article on
-`writing good documentation`_
+About the documentation
+~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _writing good documentation: https://documentation.divio.com/
+`Why is the documentation structured this way? <https://documentation.divio.com>`_
+
+.. toctree::
+    :caption: Tutorials
+    :name: tutorials
+    :maxdepth: 1
+
+    tutorials/installation
+
+.. toctree::
+    :caption: How-to Guides
+    :name: how-to
+    :maxdepth: 1
+
+    how-to/accomplish-a-task
+
+.. toctree::
+    :caption: Explanations
+    :name: explanations
+    :maxdepth: 1
+
+    explanations/why-is-something-so
+
+.. rst-class:: no-margin-after-ul
+
+.. toctree::
+    :caption: Reference
+    :name: reference
+    :maxdepth: 1
+
+    reference/api
+    reference/contributing
+
+* :ref:`genindex`
