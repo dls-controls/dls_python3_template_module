@@ -81,7 +81,7 @@ templates_path = ["_templates"]
 source_suffix = ".rst"
 
 # The master toctree document.
-master_doc = "contents"
+master_doc = "index"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -91,6 +91,8 @@ exclude_patterns = ["_build"]
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = "sphinx"
 
+# This means you can link things like `str` and `asyncio` to the relevant
+# docs in the python documentation.
 intersphinx_mapping = dict(python=("https://docs.python.org/3/", None))
 
 # A dictionary of graphviz graph attributes for inheritance diagrams.
@@ -109,6 +111,9 @@ rst_epilog = """
 #
 html_theme = "sphinx_rtd_theme"
 
+# Options for the sphinx rtd theme, use DLS blue
+html_theme_options = dict(style_nav_header_background="rgb(7, 43, 93)")
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
@@ -120,5 +125,9 @@ html_show_sphinx = False
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
 html_show_copyright = True
 
-# Override the colour in a custom css file
+# Add some CSS classes for columns and other tweaks in a custom css file
 html_css_files = ["theme_overrides.css"]
+
+# Logo
+html_logo = "dls-logo.svg"
+html_favicon = "dls-favicon.ico"
