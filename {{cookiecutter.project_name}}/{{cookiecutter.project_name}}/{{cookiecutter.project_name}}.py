@@ -10,7 +10,11 @@ class HelloClass:
         self.name = name
 
     def format_greeting(self) -> str:
-        """Return a greeting for `name`"""
+        """Return a greeting for `name`
+
+        >>> HelloClass("me").format_greeting()
+        'Hello me'
+        """
         greeting = f"Hello {self.name}"
         return greeting
 

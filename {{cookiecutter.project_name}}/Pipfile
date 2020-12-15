@@ -16,6 +16,9 @@ black = "==19.10b0"
 # Without these lines lockfile isn't usable on multiple Python versions and platforms
 mypy = "*"
 atomicwrites = "*"
+# This pin no longer required after https://github.com/tholo/pytest-flake8/pull/71 merges
+pytest = "<6.1.0"
+sphinx-multiversion = "*"
 
 [packages]
 # All other package requirements from setup.cfg
@@ -23,5 +26,6 @@ atomicwrites = "*"
 
 [scripts]
 # Put coverage here so we don't interfere with debugging in the IDE
-tests = "python -m pytest --cov-fail-under=90 --cov={{ cookiecutter.project_name }} --cov-report term"
-docs = "sphinx-build -E -b html docs build/html"
+tests = "python -m pytest --cov={{ cookiecutter.project_name }} --cov-report term"
+docs = "sphinx-build -EWT --keep-going docs build/html"
+clean = "rm -rf build prefix */__pycache__ .coverage cov.xml *.egg-info .mypy_cache .pytest_cache"
