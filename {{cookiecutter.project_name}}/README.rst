@@ -1,7 +1,7 @@
 {{ cookiecutter.project_name }}
 ===========================
 
-|build_status| |coverage| |pypi_version| |readthedocs| |license|
+|build_status| |coverage| |pypi_version| |license|
 
 This is where you should write a short paragraph that describes what your module does,
 how it does it, and why people should use it.
@@ -9,7 +9,7 @@ how it does it, and why people should use it.
 ============== ==============================================================
 PyPI           ``pip install {{ cookiecutter.project_name }}``
 Source code    https://github.com/dls-controls/{{ cookiecutter.project_name }}
-Documentation  http://{{ cookiecutter.project_name }}.readthedocs.io
+Documentation  https://dls-controls.github.io/{{ cookiecutter.project_name }}
 ============== ==============================================================
 
 This is where you should put some images or code snippets that illustrate
@@ -28,22 +28,22 @@ Or if it is a commandline tool then you might put some example commands here::
     {{ cookiecutter.project_name }} person --times=2
 
 
-.. |build_status| image:: https://travis-ci.com/dls-controls/{{ cookiecutter.project_name }}.svg?branch=master
-    :target: https://travis-ci.com/dls-controls/{{ cookiecutter.project_name }}
+.. |build_status| image:: https://github.com/dls-controls/{{ cookiecutter.project_name }}/workflows/Python%20CI/badge.svg?branch=master
+    :target: https://github.com/dls-controls/{{ cookiecutter.project_name }}/actions?query=workflow%3A%22Python+CI%22
     :alt: Build Status
 
-.. |coverage| image:: https://coveralls.io/repos/github/dls-controls/{{ cookiecutter.project_name }}/badge.svg?branch=master
-    :target: https://coveralls.io/github/dls-controls/{{ cookiecutter.project_name }}?branch=master
+.. |coverage| image:: https://dls-controls.github.io/{{ cookiecutter.project_name }}/coverage.svg
+    :target: https://github.com/dls-controls/{{ cookiecutter.project_name }}/actions?query=workflow%3A%22Python+CI%22
     :alt: Test Coverage
 
-.. |pypi_version| image:: https://badge.fury.io/py/{{ cookiecutter.project_name }}.svg
-    :target: https://badge.fury.io/py/{{ cookiecutter.project_name }}
+.. |pypi_version| image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_name }}.svg
+    :target: https://pypi.org/project/{{ cookiecutter.project_name }}
     :alt: Latest PyPI version
-
-.. |readthedocs| image:: https://readthedocs.org/projects/{{ cookiecutter.project_name }}/badge/?version=latest
-    :target: http://{{ cookiecutter.project_name }}.readthedocs.io
-    :alt: Documentation
 
 .. |license| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
     :target: https://opensource.org/licenses/Apache-2.0
     :alt: Apache License
+
+..
+    Anything below this line is used when viewing README.rst and will be replaced
+    when included in index.rst
