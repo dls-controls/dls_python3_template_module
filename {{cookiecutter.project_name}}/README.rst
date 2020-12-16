@@ -28,16 +28,16 @@ Or if it is a commandline tool then you might put some example commands here::
     {{ cookiecutter.project_name }} person --times=2
 
 
-.. |build_status| image:: https://github.com/dls-controls/scanspec/workflows/Python%20CI/badge.svg?branch=master
-    :target: https://github.com/dls-controls/scanspec/actions?query=workflow%3A%22Python+CI%22
+.. |build_status| image:: https://github.com/dls-controls/{{ cookiecutter.project_name }}/workflows/Python%20CI/badge.svg?branch=master
+    :target: https://github.com/dls-controls/{{ cookiecutter.project_name }}/actions?query=workflow%3A%22Python+CI%22
     :alt: Build Status
 
-.. |coverage| image:: https://dls-controls.github.io/scanspec/coverage.svg
-    :target: https://github.com/dls-controls/scanspec/actions?query=workflow%3A%22Python+CI%22
+.. |coverage| image:: https://dls-controls.github.io/{{ cookiecutter.project_name }}/coverage.svg
+    :target: https://github.com/dls-controls/{{ cookiecutter.project_name }}/actions?query=workflow%3A%22Python+CI%22
     :alt: Test Coverage
 
-.. |pypi_version| image:: https://img.shields.io/pypi/v/scanspec.svg
-    :target: https://pypi.org/project/scanspec
+.. |pypi_version| image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_name }}.svg
+    :target: https://pypi.org/project/{{ cookiecutter.project_name }}
     :alt: Latest PyPI version
 
 .. |license| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
