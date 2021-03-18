@@ -1,7 +1,7 @@
 {{ cookiecutter.project_name }}
 ===========================
 
-|build_status| |coverage| |pypi_version| |license|
+|code_ci| |docs_ci| |coverage| |pypi_version| |license|
 
 This is where you should write a short paragraph that describes what your module does,
 how it does it, and why people should use it.
@@ -28,12 +28,16 @@ Or if it is a commandline tool then you might put some example commands here::
     {{ cookiecutter.project_name }} person --times=2
 
 
-.. |build_status| image:: https://github.com/dls-controls/{{ cookiecutter.project_name }}/workflows/Python%20CI/badge.svg?branch=master
-    :target: https://github.com/dls-controls/{{ cookiecutter.project_name }}/actions?query=workflow%3A%22Python+CI%22
-    :alt: Build Status
+.. |code_ci| image:: https://github.com/dls-controls/{{ cookiecutter.project_name }}/workflows/Code%20CI/badge.svg?branch=master
+    :target: https://github.com/dls-controls/{{ cookiecutter.project_name }}/actions?query=workflow%3A%22Code+CI%22
+    :alt: Code CI
 
-.. |coverage| image:: https://dls-controls.github.io/{{ cookiecutter.project_name }}/coverage.svg
-    :target: https://github.com/dls-controls/{{ cookiecutter.project_name }}/actions?query=workflow%3A%22Python+CI%22
+.. |docs_ci| image:: https://github.com/dls-controls/{{ cookiecutter.project_name }}/workflows/Docs%20CI/badge.svg?branch=master
+    :target: https://github.com/dls-controls/{{ cookiecutter.project_name }}/actions?query=workflow%3A%22Docs+CI%22
+    :alt: Docs CI
+
+.. |coverage| image:: https://codecov.io/gh/dls-controls/{{ cookiecutter.project_name }}/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/dls-controls/{{ cookiecutter.project_name }}
     :alt: Test Coverage
 
 .. |pypi_version| image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_name }}.svg
@@ -47,3 +51,5 @@ Or if it is a commandline tool then you might put some example commands here::
 ..
     Anything below this line is used when viewing README.rst and will be replaced
     when included in index.rst
+
+See https://dls-controls.github.io/{{ cookiecutter.project_name }} for more detailed documentation.
