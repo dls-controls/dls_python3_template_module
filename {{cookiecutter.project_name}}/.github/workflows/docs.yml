@@ -8,9 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python: [ '3.7' ]
 
     steps:
       - name: Checkout Source
@@ -22,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python }}
+          python-version: "3.7"
 
       - name: Install Packages
         # Can delete this if you don't use graphviz in your docs
@@ -31,7 +28,7 @@ jobs:
       - name: Install Python Dependencies
         run: |
           pip install pipenv
-          pipenv install --dev --deploy --python ${{ matrix.python }} && pipenv graph
+          pipenv install --dev --deploy --python $(which python) && pipenv graph
 
       - name: Deploy index
         # We pin to the SHA, not the tag, for security reasons.
