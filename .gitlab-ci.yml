@@ -1,7 +1,9 @@
-rhel7_job:
-  tags:
-    - rhel7
-  before_script:
-    - pipenv install --dev
+include:
+  - project: 'controls/reports/ci_templates'
+    ref: master
+    file: 'defaults.yml'
+
+tests:
   script:
+    - pipenv install --dev
     - pipenv run tests
