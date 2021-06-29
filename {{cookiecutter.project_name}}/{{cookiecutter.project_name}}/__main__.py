@@ -1,4 +1,4 @@
-from {{ cookiecutter.project_name }} import cli
+from . import cli
 
 # test with:
 #     pipenv run python -m {{ cookiecutter.project_name }}

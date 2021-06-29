@@ -1,6 +1,7 @@
 from argparse import ArgumentParser
 
-from {{ cookiecutter.project_name }} import HelloClass, __version__, say_hello_lots
+from . import __version__
+from .{{ cookiecutter.project_name }} import HelloClass, say_hello_lots
 
 
 def main(args=None):
