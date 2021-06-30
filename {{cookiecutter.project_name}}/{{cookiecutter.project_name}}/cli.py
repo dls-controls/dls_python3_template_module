@@ -3,6 +3,8 @@ from argparse import ArgumentParser
 from . import __version__
 from .hello import HelloClass, say_hello_lots
 
+__all__ = ["main"]
+
 
 def main(args=None):
     parser = ArgumentParser()
