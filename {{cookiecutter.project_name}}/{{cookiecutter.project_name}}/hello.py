@@ -1,3 +1,11 @@
+# The purpose of __all__ is to define the public API of this module, and which
+# objects are imported if we call "from {{ cookiecutter.project_name }}.{{ cookiecutter.project_name }} import *"
+__all__ = [
+    "HelloClass",
+    "say_hello_lots",
+]
+
+
 class HelloClass:
     """A class who's only purpose in life is to say hello"""
 
