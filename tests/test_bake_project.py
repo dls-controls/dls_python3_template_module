@@ -54,7 +54,9 @@ def test_bake_and_run_tests(cookies):
         assert not result.exception
         assert result.project.isdir()
         install = run_inside_dir('pipenv install --dev', str(result.project))
-        assert install.returncode == 0
+        assert install.returncode == 0, install.stderr.decode()
+        docs = run_inside_dir('pipenv run docs', str(result.project))
+        assert docs.returncode == 0, docs.stderr.decode()
         test = run_inside_dir('pipenv run tests', str(result.project))
         assert test.returncode == 1
         out = test.stdout.decode()
