@@ -7,6 +7,10 @@ Installation Tutorial
     ``dls-python3`` and ``pipenv``. Although these instructions will work
     inside DLS, they are intended for external use.
 
+    If you want to contribute to the library itself, please follow
+    the `contributing` instructions.
+
+
 Check your version of python
 ----------------------------
 
@@ -14,6 +18,7 @@ You will need python 3.7 or later. You can check your version of python by
 typing into a terminal::
 
     python3 --version
+
 
 Create a virtual environment
 ----------------------------

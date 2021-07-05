@@ -18,7 +18,7 @@ introductory code here:
 
 .. code:: python
 
-    from {{ cookiecutter.project_name }} import HelloClass
+    from {{ cookiecutter.project_name }}.hello import HelloClass
 
     hello = HelloClass("me")
     print(hello.format_greeting())

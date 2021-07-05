@@ -1,5 +1,5 @@
 # The purpose of __all__ is to define the public API of this module, and which
-# objects are imported if we call "from {{ cookiecutter.project_name }}.{{ cookiecutter.project_name }} import *"
+# objects are imported if we call "from {{ cookiecutter.project_name }}.hello import *"
 __all__ = [
     "HelloClass",
     "say_hello_lots",
@@ -7,7 +7,7 @@ __all__ = [
 
 
 class HelloClass:
-    """A class who's only purpose in life is to say hello"""
+    """A class whose only purpose in life is to say hello"""
 
     def __init__(self, name: str):
         """
