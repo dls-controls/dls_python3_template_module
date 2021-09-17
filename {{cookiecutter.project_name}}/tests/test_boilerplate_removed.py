@@ -47,6 +47,15 @@ def test_changed_README():
     )
 
 
+# README
+def test_changed_CHANGELOG():
+    assert_not_contains_text(
+        "CHANGELOG.rst",
+        "When you make a change, put it here",
+        "To summarize changes to your module as you make them",
+    )
+
+
 # Docs
 def test_docs_ref_api_changed():
     assert_not_contains_text(

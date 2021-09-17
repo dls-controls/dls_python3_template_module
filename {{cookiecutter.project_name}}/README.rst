@@ -10,6 +10,7 @@ how it does it, and why people should use it.
 PyPI           ``pip install {{ cookiecutter.project_name }}``
 Source code    https://github.com/dls-controls/{{ cookiecutter.project_name }}
 Documentation  https://dls-controls.github.io/{{ cookiecutter.project_name }}
+Changelog      https://github.com/dls-controls/{{ cookiecutter.project_name }}/blob/master/CHANGELOG.rst
 ============== ==============================================================
 
 This is where you should put some images or code snippets that illustrate
