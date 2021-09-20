@@ -25,6 +25,9 @@ sphinx-rtd-theme = "*"
 [packages]
 # All other package requirements from setup.cfg
 {{ cookiecutter.project_name }} = {editable = true,path = "."}
+# If the module or any of its dependencies depends on typing-extensions
+# then uncomment the following line
+#typing-extensions = "*"
 
 [scripts]
 tests = "python -m pytest"
