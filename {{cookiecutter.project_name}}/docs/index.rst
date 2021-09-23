@@ -52,12 +52,18 @@ Reference
 
 Technical reference material, for classes, methods, APIs, commands, and contributing to the project.
 
+..
+    Index link below is a hack to make genindex.html a relative link
+    https://stackoverflow.com/a/31820846
+
 .. toctree::
     :caption: Reference
     :hidden:
 
     reference/api
     reference/contributing
+    Changelog <https://github.com/dls-controls/{{ cookiecutter.project_name }}/blob/master/CHANGELOG.rst>
+    Index <genindex.html#http://>
 
 .. rst-class:: endcolumns
 

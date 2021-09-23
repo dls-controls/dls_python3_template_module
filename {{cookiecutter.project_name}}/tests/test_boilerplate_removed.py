@@ -27,10 +27,11 @@ def test_module_description(setupcfg):
 
 
 def assert_not_contains_text(path, text, explanation):
-    with open(path, "r") as f:
-        contents = f.read().replace("\n", " ")
-    if text in contents:
-        raise AssertionError(f"Please change ./{path} {explanation}")
+    if os.path.exists(path):
+        with open(path, "r") as f:
+            contents = f.read().replace("\n", " ")
+        if text in contents:
+            raise AssertionError(f"Please change ./{path} {explanation}")
 
 
 def assert_not_exists(path, explanation):
