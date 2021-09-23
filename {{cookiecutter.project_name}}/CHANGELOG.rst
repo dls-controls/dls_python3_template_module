@@ -49,6 +49,6 @@ Security:
 Initial release
 
 
-.. _Unreleased: https://github.com/dls-controls/{{ cookiecutter.project_name }}/compare/0.2...HEAD
-.. _0.2: https://github.com/dls-controls/{{ cookiecutter.project_name }}/compare/0.1...0.2
-.. _0.1: https://github.com/dls-controls/{{ cookiecutter.project_name }}/releases/tag/0.1
+.. _Unreleased: ../../compare/0.2...HEAD
+.. _0.2: ../../compare/0.1...0.2
+.. _0.1: ../../releases/tag/0.1
