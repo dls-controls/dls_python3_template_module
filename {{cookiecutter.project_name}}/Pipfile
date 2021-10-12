@@ -4,30 +4,10 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-# Pinning black stops us having to allow pre-releases globally
-black = "==21.7b0"
-
-# Pins to make lockfile usable on multiple Python versions and platforms
-mypy = "*"
-atomicwrites = "*"
-typing-extensions = "*"
-importlib-metadata = "*"
-
-# Test and docs dependencies
-pytest-cov = "*"
-pytest-mypy = "*"
-pytest-flake8 = "*"
-pytest-black = "*"
-flake8-isort = "*"
-isort = ">5.0"
-sphinx-rtd-theme-github-versions = "*"
+{{ cookiecutter.project_name }} = {editable = true, extras = ["dev"], path = "."}
 
 [packages]
-# All other package requirements from setup.cfg
-{{ cookiecutter.project_name }} = {editable = true,path = "."}
-# If the module or any of its dependencies depends on typing-extensions
-# then uncomment the following line
-#typing-extensions = "*"
+{{ cookiecutter.project_name }} = {editable = true, path = "."}
 
 [scripts]
 tests = "python -m pytest"
