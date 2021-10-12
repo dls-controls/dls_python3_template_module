@@ -57,7 +57,7 @@ jobs:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
         with:
-          name: ${{ toJSON(matrix) }}
+          name: ${{ matrix.python }}/${{ matrix.os }}/${{ matrix.pipenv }}
           files: cov.xml
 
       - name: Upload Wheel and Sdist as artifacts
