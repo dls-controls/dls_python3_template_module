@@ -158,3 +158,14 @@ complexity
 .. _mypy: http://mypy-lang.org/
 .. _versiongit: https://versiongit.readthedocs.io/en/latest/
 .. _versioneer: https://github.com/warner/python-versioneer
+
+Further reading
+---------------
+
+Here are some justifications for some of the decisions made in the structure of the template module
+
+Why a src directory?
+~~~~~~~~~~~~~~~~~~~~
+
+We put our module in an unimportable ``src`` directory so it doesn't shadow the installed directory we import from in our tests. This catches packaging issues.
+See https://hynek.me/articles/testing-packaging/ for more details.
