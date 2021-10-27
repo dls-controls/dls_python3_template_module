@@ -112,8 +112,8 @@ results. Key features:
 flake8_
 ~~~~~~~
 
-This tool warns about linting type errors, improving the overall quality of
-your code. For example it will warn about:
+This tool warns about linting type errors, improving the overall quality of your
+code. For example it will warn about:
 
 - Unused imports
 - Unused variables
@@ -129,23 +129,28 @@ written by any developer will have the same style.
 isort_
 ~~~~~~
 
-This tool sorts imports into sections. Like black_ it is also opinionated,
-and has the same function of reducing arguments between developers. This
-module includes some options that make it compatible with black.
+This tool sorts imports into sections. Like black_ it is also opinionated, and
+has the same function of reducing arguments between developers. This module
+includes some options that make it compatible with black.
 
 mypy_
 ~~~~~
 
-This tool is a type checker that statically analyses your code, warning about the wrong usage of types. It will only check code that is annotated with type hints, so can be
-used in only some parts of the code. It is highly recommended for large projects as it helps developers answer the question "what exactly was I passed into this function" without
-having to sacrifice Python's flexibility where needed.
+This tool is a type checker that statically analyses your code, warning about
+the wrong usage of types. It will only check code that is annotated with type
+hints, so can be used in only some parts of the code. It is highly recommended
+for large projects as it helps developers answer the question "what exactly was
+I passed into this function" without having to sacrifice Python's flexibility
+where needed.
 
 versiongit_
 ~~~~~~~~~~~
 
-This tool gets the version number of a module from a ``git describe`` command. At release time it takes this version number and puts it in the released egg, wheel or sdist.
-It takes the form of a single source file that is stored in the repo, which can be used at runtime or build time. It is inspired by versioneer_ but is much smaller in size and
-complexity
+This tool gets the version number of a module from a ``git describe`` command.
+At release time it takes this version number and puts it in the released egg,
+wheel or sdist. It takes the form of a single source file that is stored in the
+repo, which can be used at runtime or build time. It is inspired by versioneer_
+but is much smaller in size and complexity
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _pipenv: https://pipenv.pypa.io/en/latest/
@@ -167,5 +172,8 @@ Here are some justifications for some of the decisions made in the structure of 
 Why a src directory?
 ~~~~~~~~~~~~~~~~~~~~
 
-We put our module in an unimportable ``src`` directory so it doesn't shadow the installed directory we import from in our tests. This catches packaging issues.
-See https://hynek.me/articles/testing-packaging/ for more details.
+We put our package in an unimportable ``src`` directory so it doesn't shadow the
+installed directory we import from in our tests. This catches packaging issues.
+It also means that we could add more packages alongside it to be packaged in the
+same wheel without changing the directory structure. See
+https://hynek.me/articles/testing-packaging/ for more details.
